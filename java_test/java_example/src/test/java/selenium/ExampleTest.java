@@ -23,8 +23,12 @@ public class ExampleTest {
 
     @Test
     public void exampleTest() {
+        String logoutLocator = "//div[@id='box-account']//a[contains(text(), 'Logout')]";
         driver.navigate().to("http://localhost:8080/litecart/en/");
-        driver.findElement(By.name("email")).isDisplayed();
+        driver.findElement(By.name("email")).sendKeys("someone@gmail.com");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("login")).click();
+        driver.findElement(By.xpath(logoutLocator)).isDisplayed();
     }
 
     @After
