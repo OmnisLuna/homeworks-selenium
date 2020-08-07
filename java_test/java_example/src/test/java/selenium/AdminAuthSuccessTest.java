@@ -26,6 +26,7 @@ public class AdminAuthSuccessTest {
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
         driver.findElement(By.id("box-apps-menu-wrapper")).isDisplayed();
+        driver.navigate().to("http://localhost:8080/litecart/admin/?app=appearance");
     }
 
     @After
