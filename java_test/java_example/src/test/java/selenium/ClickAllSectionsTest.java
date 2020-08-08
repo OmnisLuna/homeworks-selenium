@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.junit.runners.Parameterized.Parameters;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -88,48 +89,48 @@ public class ClickAllSectionsTest extends SeleniumAutotest {
             }
         }
 
-            if (sideBarTitleName.equals("'Customers'")) {
+        if (sideBarTitleName.equals("'Customers'")) {
 
-                String[] elements = new String[]{
-                        "doc-newsletter",
-                        "doc-csv",
-                };
+            String[] elements = new String[]{
+                    "doc-newsletter",
+                    "doc-csv",
+            };
 
-                for (String element : elements) {
-                    clickSideBarSubTitle(element);
-                    wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
-                    Assert.assertTrue(condition);
-                    System.out.println(element);
-                }
-            }
-
-            if (sideBarTitleName.equals("'Languages'")) {
-                clickSideBarSubTitle("doc-storage_encoding");
+            for (String element : elements) {
+                clickSideBarSubTitle(element);
                 wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
                 Assert.assertTrue(condition);
+                System.out.println(element);
             }
+        }
 
-            if (sideBarTitleName.equals("'Modules'")) {
+        if (sideBarTitleName.equals("'Languages'")) {
+            clickSideBarSubTitle("doc-storage_encoding");
+            wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
+            Assert.assertTrue(condition);
+        }
 
-                String[] elements = new String[]{
-                        "doc-jobs",
-                        "doc-customer",
-                        "doc-shipping",
-                        "doc-payment",
-                        "doc-order_total",
-                        "doc-order_success",
-                        "doc-order_action"
-                };
+        if (sideBarTitleName.equals("'Modules'")) {
 
-                for (String element : elements) {
-                    clickSideBarSubTitle(element);
-                    wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
-                    Assert.assertTrue(condition);
-                    System.out.println(element);
-                }
+            String[] elements = new String[]{
+                    "doc-jobs",
+                    "doc-customer",
+                    "doc-shipping",
+                    "doc-payment",
+                    "doc-order_total",
+                    "doc-order_success",
+                    "doc-order_action"
+            };
+
+            for (String element : elements) {
+                clickSideBarSubTitle(element);
+                wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
+                Assert.assertTrue(condition);
+                System.out.println(element);
             }
+        }
 
-       if (sideBarTitleName.equals("'Orders'")) {
+        if (sideBarTitleName.equals("'Orders'")) {
             clickSideBarSubTitle("doc-order_statuses");
             wait.until(visibilityOfElementLocated(By.xpath(sideBarSubTitle)));
             Assert.assertTrue(condition);
@@ -195,5 +196,5 @@ public class ClickAllSectionsTest extends SeleniumAutotest {
                 Assert.assertTrue(condition);
             }
         }
-        }
+    }
 }
