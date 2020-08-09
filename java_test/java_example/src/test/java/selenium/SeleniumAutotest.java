@@ -28,11 +28,6 @@ public class SeleniumAutotest {
                     driver.quit();
                     driver = null;
                 }));
-
-        driver.navigate().to("http://localhost:8080/litecart/admin/login.php");
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
     }
 
     @After
