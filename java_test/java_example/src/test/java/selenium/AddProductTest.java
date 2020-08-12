@@ -45,9 +45,9 @@ public class AddProductTest {
         String name = "Elvis Duck" + ((char)rand.nextInt(26) + 'a');
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+        driver.findElement(By.xpath("//input[@name='code']")).sendKeys("123123");
         driver.findElement(By.xpath("//input[@name='name[en]']")).isDisplayed();
         driver.findElement(By.xpath("//input[@name='name[en]']")).sendKeys(name);
-        driver.findElement(By.xpath("//input[@name='code']")).sendKeys("123123");
         driver.findElement(By.xpath("//input[@type='checkbox' and @data-name='Root']")).click();
         driver.findElement(By.xpath("//input[@type='checkbox' and @data-name='Rubber Ducks']")).click();
         driver.findElement(By.xpath("//input[@name='product_groups[]' and @value='1-3']")).click();
